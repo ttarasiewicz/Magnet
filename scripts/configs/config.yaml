@@ -1,0 +1,24 @@
+model:
+  name: MagNet_radius_reduce_res_preprocessed
+params:
+  epochs: 100
+  batch_size: 64
+  patch_size: 32
+  lr: 0.0001
+  optimizer: Adam
+  loss: cMSE
+dataset:
+  configurator: ProbaV
+  root: E:\Programming\deepsent\dataset
+  dataset_name: ProbaV
+  bands: NIR
+  scale: 3
+  register_images: False
+  register_mode: int
+  compute_shifts: True
+graph_builder:
+  name: RadiusBuilder
+  radius: 1.0
+system:
+  device: 0
+  recache: False
